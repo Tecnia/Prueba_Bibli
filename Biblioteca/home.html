@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://pedagogica.metacatalogo.org/ -->
+<html lang="es-ES" class=" js  fonts-loaded">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="Koha 20.1102000"> <!-- leave this for stats -->
+	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1, maxium-scale=1, minimum-scale=1">
+	<link rel="shortcut icon" href="http://pedagogica.metacatalogo.org/opac-tmpl/bootstrap/images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="./stilos/css.css" type="text/css">
+	<link rel="stylesheet" href="./stilos/fontello.css">
+	<!-- Desactivar estilos predefinidos 
+	<link rel="stylesheet" href="./Catálogo en línea Koha_files/jquery-ui-1.12.1.min_20.1102000.css" type="text/css">
+	<link rel="stylesheet" href="./Catálogo en línea Koha_files/opac_20.1102000.css" type="text/css">
+	<link rel="stylesheet" media="print" href="./Catálogo en línea Koha_files/print_20.1102000.css" type="text/css">
+	-->
+	
+	
+	<title>Catálogo en línea Koha</title>
+</head>
+
+<body id="opac-main" class="branch-default">
+	<div id="wrapper">
+		<header>
+			<div id="header-region" class="noprint">
+				<div class="l">
+					<div class="lugo">
+						<h1 id="logo">Koha</h1>
+					</div>
+					<div class="men">
+						<!--<div id="cartDetails" class="cart-message">Su carrito está vacío</div>--> 
+						<ul id="cart-list-nav" class="navbar-nav">
+							<li class="nav-item"><a class="nav-link" href="http://pedagogica.metacatalogo.org/#" id="cartmenulink" role="button" title="Reunir ítems en los que esta interesado"><i id="carticon" class="fa fa-shopping-cart fa-icon-black" aria-hidden="true"></i> <span class="icon-basket">Carrito</span> <span id="basketcount"></span></a></li>
+							<li class="divider-vertical"></li>
+							<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="http://pedagogica.metacatalogo.org/#" id="listsmenu" role="button" title="Mostrar listas"><i class="fa fa-list fa-icon-black" aria-hidden="true"></i> <span class="icon-list-bullet">Listas</span></a>
+								<div aria-labelledby="listsmenu" role="menu" class="dropdown-menu">
+									<a class="dropdown-item" href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-shelves.pl?op=list&amp;category=1" tabindex="-1" role="menuitem">Sus listas</a>
+									<a class="dropdown-item" href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-shelves.pl?op=add_form" tabindex="-1" role="menuitem">Ingrese para crear sus propias listas</a>
+								</div> <!-- / .dropdown-menu -->
+							</li> <!-- / .nav-item.dropdown -->
+						</ul> <!-- / .navbar-nav -->
+					</div>
+				</div>
+				<div class="ico">
+				<label  for="bar" class="icon-book-open"></label>
+				</div>
+				<input type="checkbox" id="bar">
+				<nav class="menu">
+					<ul class="menup">
+						<li><a href="#">Idiomas</a>
+							<ul class="menus">
+								<li><a href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-changelanguage.pl?language=en">English</a></li>
+								<li><a href="http://pedagogica.metacatalogo.org/#">Español&nbsp;</a></li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-user.pl" class="nav-link login-link loginModal-trigger"><i class="fa fa-user fa-icon-black fa-fw" aria-hidden="true"></i> <span class="userlabel">Ingresar a su cuenta</span></a>
+						</li>
+						
+						<li class="nav-item search_history">
+							<a class="nav-link login-link" href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-search-history.pl" title="Ver su historial de búsqueda">Historial de búsqueda</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link logout clearsh" href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-search-history.pl?action=delete" title="Eliminar historial de búsqueda"><i class="fa fa-trash" aria-hidden="true"></i> Limpiar</a>
+						</li> 
+					</ul>
+			</nav><!-- /navbar -->
+		</div><!-- / header-region -->
+		</header>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col">
+					<div id="opac-main-search"> 
+						<form name="searchform" method="get" action="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-search.pl" id="searchform">
+							<div class="form-row align-items-center">
+								<div class="col-sm-auto order-1 order-sm-1">
+									<label for="masthead_search"> Buscar    </label>
+								</div>
+								<div class="col-sm-auto order-2 order-sm-2">
+									<select name="idx" id="masthead_search" class="form-control"> 
+										<option value="">Catálogo de biblioteca</option> 
+										<option value="ti">Título</option>
+										<option value="au">Autor</option>
+										<option value="su">Tema</option>
+										<option value="nb">ISBN</option>
+										<option value="ns">ISSN</option>
+										<option value="se">Series</option>
+										<option value="callnum">Signatura</option> 
+									</select> 
+								</div> <!-- /.col-sm-auto -->
+								<div class="col order-4 order-sm-3">
+									<input class="transl1 form-control" id="translControl1" name="q" title="Escriba el término de búsqueda" type="text"><span id="translControl"></span>
+								</div> <!-- /.col -->
+								<div class="order-5 col-sm-auto">
+									<button type="submit" id="searchsubmit" class="btn btn-primary">Ir</button>
+								</div>
+							</div> <!-- /.form-row -->
+							<input type="hidden" name="weight_search" value="1">
+						</form>
+					</div><!-- /#opac-main-search -->
+				</div> <!-- /.col -->
+			</div> <!-- /.row -->
+			<div class="rows">
+				<ul class="nav" id="moresearches">
+					<li class="nav-item">
+						<a href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-search.pl">Búsqueda avanzada</a>
+					</li>
+					<li class="nav-item">
+						<a href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-authorities-home.pl">Búsqueda de autoridad</a>
+					</li>
+					<li class="nav-item">
+						<a href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-tags.pl">Nube de etiquetas</a>
+					</li> 
+					<li class="nav-item"><a id="library_page" href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-library.pl">Biblioteca  </a>
+					</li>
+				</ul> <!-- /.nav#moresearches -->
+			</div> <!-- /.row -->
+		</div> <!-- /.container-fluid -->
+		
+			<!-- Login form hidden by default, used for modal window -->
+		<div id="loginModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel" aria-hidden="true">
+		 <div class="modal-dialog">
+			 <div class="modal-content">
+				 <div class="modal-header">
+					 <legend>Ingrese a su cuenta:</legend>
+					
+				 </div>
+				 <form action="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-user.pl" method="post" name="auth" id="modalAuth">
+					 <input type="hidden" name="has-search-query" id="has-search-query" value="">
+					 <div class="modal-body">
+						 <input type="hidden" name="koha_login_context" value="opac">
+						 <fieldset class="brief">
+							 <input type="text" id="muserid" name="userid" placeholder="USUARIO">
+							 <input type="password" id="mpassword" name="password" placeholder="Contraseña">
+						 </fieldset>
+					 </div>
+					 <div class="modal-footer">
+						 <input class="btn btn-primary" type="submit" value="Ingresar">
+					 </div>
+				 </form> <!-- /#auth -->
+			 </div> <!-- /.modal-content -->
+		 </div> <!-- /.modal-dialog -->
+		</div> <!-- /#modalAuth -->
+	</div> <!-- / #wrapper in masthead.inc -->
+	<footer id="changelanguage" class="noprint">
+		<ul class="nav">
+			<li class="nav-item">
+				<span class="navbar-text">Idiomas:</span>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="http://pedagogica.metacatalogo.org/cgi-bin/koha/opac-changelanguage.pl?language=en">English</a> <!-- /.nav-link -->
+			</li> <!-- /.nav-item -->
+			<li class="nav-item">
+				<a class="nav-link disabled" href="http://pedagogica.metacatalogo.org/#" tabindex="-1" aria-disabled="true">Español</a> <!-- /.nav-link -->
+			</li> <!-- /.nav-item -->
+		</ul> <!-- /.nav -->
+	</footer> <!-- / #changelanguage -->
+</body>
+</html>
